@@ -1,0 +1,31 @@
+<% include partials/header %>
+<div class="container ">
+	<div class="text-center design">
+		<h4>Register</h4>
+		<form action="/register" method="POST">
+			
+			<div class="form-group">
+				<input class="form-control" type="text" name="username" placeholder="Username" >
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" name="password" placeholder="Password">
+			</div>
+			<button class="btn btn-primary"> Submit </button>
+		</form>
+	</div>
+</div>
+
+<style>
+	.design{
+	margin: auto;
+	margin-top:15%;
+	width:40%;
+	}
+	body{
+	background: url('https://cdn3.vectorstock.com/i/1000x1000/12/37/fresh-spring-green-polygon-triangular-pattern-vector-6761237.jpg');
+	background-size:cover;
+	background-attachment: fixed;
+			background-position: center;
+	}
+</style>
+<% include partials/footer %>

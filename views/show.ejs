@@ -1,0 +1,51 @@
+<% include partials/header %>
+	<div class="container">
+			<img src="<%=specificpost.image %>" style="width:100%; height:500px;">
+			<div class="mt-5 row justify-content-between ">
+			
+					<div class="jumbotron col-md-4 col-sm-12 justify-content-start">
+						 Name: <h2 style="font-family: 'Farro', sans-serif;"> <%=specificpost.name%> </h2>
+						Location: <h3 style="font-family: 'Farro', sans-serif;"> <%=specificpost.location%> </h3>
+						Description: <h4 style="font-family: 'Satisfy', cursive;"> <%=specificpost.description%> </h4>
+					</div>
+					<div class="col-md-7 col-sm-12 text-center" id="commenties" >
+						<span> <h2 class="com" >Comments </h2><a class="btn btn-dark justify-content-end" href=
+						"/posts/<%=specificpost._id%>/comments/new">Add a comment</a> <a class="btn btn-dark justify-content-end" href=
+						"/posts/<%=specificpost._id%>/edit">Edit post</a><hr> </span>
+						<form action="/<%=specificpost._id%>" method="POST">
+							<button class="btn btn-danger mb-5" name="submit">Delete</button>
+						</form>
+						<div class="jumbotron">
+								<% specificpost.comments.forEach(function(f){ %>
+									<div class="row">
+
+									<h3 style="font-family: 'Poiret One', cursive;color: black;"><%= f.name %> :</h3>
+									<h3><p style="font-family: 'Anonymous Pro', monospace; color:black;"><%= f.text %> </p></h3>
+									</div>
+								<% }); %>
+						</div>
+					</div>
+				
+			</div>
+	</div>
+
+	<style>
+		.com{
+			font-size: 100px;
+			font-weight:10;
+		}
+
+		img:hover {
+		   transition: width 2s, height 2s, transform 2s;
+		  -webkit-transform: rotate(180deg); /* Safari */
+		  transform: rotateY(180deg);
+		}
+		img:{
+		transition: transform 2s;
+		}
+
+</style>
+<script>
+
+</script>
+<% include partials/footer %>
